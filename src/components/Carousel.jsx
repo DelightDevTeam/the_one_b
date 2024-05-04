@@ -1,16 +1,10 @@
 import React from 'react';
-import b1 from '../assets/img/banner1.png';
-import b2 from '../assets/img/banner2.png';
-import b3 from '../assets/img/banner3.png';
-import b4 from '../assets/img/banner4.png';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
 import useFetch from '../hooks/useFetch';
+import BASE_URL from '../hooks/baseURL';
 
 const Carousel = () => {
   // const banners = [b1, b2, b3, b4, b1];
@@ -18,7 +12,7 @@ const Carousel = () => {
     data: banners,
     error,
     loading,
-  } = useFetch('https://theonemmslot.online/api/banner');
+  } = useFetch(BASE_URL + '/banner');
   // console.log('banner', banners)
   return (
     <div>
